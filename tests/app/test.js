@@ -1,5 +1,5 @@
-const request = require('supertest');
-const app = require('../src/app');
+const path = require('path');
+const app = require(path.resolve(__dirname, '../src/app'));
 
 describe('GET /api/inmuebles', () => {
   it('debería retornar una lista de inmuebles', async () => {
