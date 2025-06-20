@@ -2,9 +2,12 @@
   "name": "realestate-api",
   "version": "1.0.0",
   "main": "index.js",
- "scripts": {
-  "start": "node src/app.js",
-  "test": "jest"
-}
-
+  "scripts": {
+    "start": "node src/app.js",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^30.0.2",
+    "supertest": "^7.1.1"
+  }
 }
