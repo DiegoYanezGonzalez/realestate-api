@@ -10,3 +10,4 @@ describe('GET /api/inmuebles', () => {
     expect(res.body[0]).toHaveProperty('precio');
   });
 });
+
