@@ -1,13 +1,14 @@
-const request = require('supertest');
-const app = require('../src/app');
+const express = require('express');
+const app = express();
 
-describe('GET /api/inmuebles', () => {
-  it('debería retornar una lista de inmuebles', async () => {
-    const res = await request(app).get('/api/inmuebles');
-    expect(res.statusCode).toBe(200);
-    expect(res.body.length).toBeGreaterThan(0);
-    expect(res.body[0]).toHaveProperty('direccion');
-    expect(res.body[0]).toHaveProperty('precio');
-  });
+const inmuebles = [
+  { id: 1, direccion: 'Calle 123', precio: 150000, tipo: 'Apartamento' },
+  { id: 2, direccion: 'Avenida 456', precio: 230000, tipo: 'Casa' },
+  { id: 3, direccion: 'Carrera 789', precio: 120000, tipo: 'Estudio' }
+];
+
+app.get('/api/inmuebles', (req, res) => {
+  res.json(inmuebles);
 });
 
+module.exports = app;
